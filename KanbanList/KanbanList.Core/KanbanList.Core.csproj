@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs" Version="7.0.4" />
+    <PackageReference Include="AutoMapper" Version="8.1.0" />
+    <PackageReference Include="MvvmCross" Version="6.3.0" />
+    <PackageReference Include="MvvmCross.Plugin.Json" Version="6.3.0" />
+    <PackageReference Include="MvvmCross.Plugin.Messenger" Version="6.3.0" />
+    <PackageReference Include="MvvmCross.Plugin.ResxLocalization" Version="6.3.0" />
+    <PackageReference Include="MvvmCross.Plugin.Visibility" Version="6.3.0" />
+    <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
+    <PackageReference Include="sameerIOTApps.Plugin.SecureStorage" Version="2.5.0" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+    <PackageReference Include="SQLiteNetExtensions" Version="2.1.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
+    <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#5D6D77</color>
+    <color name="colorPrimaryDark">#2F383D</color>
+    <color name="colorAccent">#F9AA33</color>
+  
+    <color name="colorSaveOrCreateTaskButton">#81C784</color>
+    <color name="colorDeleteTaskButton">#FF0000</color>
+    <color name="colorCancelTaskButton">#FFF176</color>
+    <color name="colorAddImageButton">#F9AA33</color>
+  
+    <color name="splash_screen_backgound">@color/colorPrimary</color>
+</resources>

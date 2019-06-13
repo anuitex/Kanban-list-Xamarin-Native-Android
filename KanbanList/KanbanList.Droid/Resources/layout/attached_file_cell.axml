@@ -1,0 +1,30 @@
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/transparent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    
+    <ImageView
+        android:id="@+id/attachedImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+		app:MvxBind="Bitmap ImageArray, Converter=BytesToBitmap" 
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/btnDeleteImage"
+        app:layout_constraintWidth_percent="0.7"
+        app:layout_constraintDimensionRatio="0.7:0.4"/>
+    <ImageView
+        android:id="@+id/btnDeleteImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp" 
+        android:scaleType="center"
+		android:src="@drawable/icon_delete"
+		app:MvxBind="Click DeleteImageCommand"
+        app:layout_constraintLeft_toRightOf="@+id/attachedImage"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/attachedImage"
+        app:layout_constraintBottom_toBottomOf="@+id/attachedImage"/>
+</android.support.constraint.ConstraintLayout>

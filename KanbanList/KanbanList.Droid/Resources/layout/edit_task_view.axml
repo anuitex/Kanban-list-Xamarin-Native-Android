@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include android:id="@+id/toolbar"
+        layout="@layout/edit_task_toolbar"
+		app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+    </include>
+
+    <ScrollView
+        android:background="@android:color/white"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:id="@+id/main_scroll"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintBottom_toTopOf="@+id/btnsContainer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:background="@android:color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        
+            <View
+                android:id="@+id/space_1"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.08"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintDimensionRatio="1:1" />
+
+            <View
+                android:id="@+id/space_9"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent="0.08"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintDimensionRatio="1:1" />
+
+            <TextView
+                android:id="@+id/lblTitle"
+                android:text="Title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toLeftOf="@+id/space_9"
+                app:layout_constraintLeft_toRightOf="@+id/space_1"
+                app:layout_constraintTop_toBottomOf="@id/space_1"/>
+
+            <EditText
+                android:id="@+id/txtTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="#191919"
+                android:maxLines="2"
+				android:inputType="text"
+				android:maxLength="50"
+				android:imeOptions="actionDone"
+				android:focusedByDefault="false"
+				app:MvxBind="Text TaskItem.Title"
+                app:layout_constraintRight_toLeftOf="@+id/space_9"
+                app:layout_constraintLeft_toRightOf="@+id/space_1"
+                app:layout_constraintTop_toBottomOf="@id/lblTitle" />
+
+            <View
+                android:id="@+id/space_10"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/txtTitle"
+                app:layout_constraintWidth_percent="0.08"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintDimensionRatio="1:0.5" />
+
+            <TextView
+                android:id="@+id/lblDescription"
+                android:text="Description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toLeftOf="@+id/space_9"
+                app:layout_constraintLeft_toRightOf="@+id/space_10"
+                app:layout_constraintTop_toBottomOf="@id/space_10"/>
+            
+			<EditText
+                android:id="@+id/txtDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="#191919"
+                android:gravity="start"
+                android:textAlignment="textStart"
+                android:maxLines="10"
+				android:inputType="textMultiLine"
+				android:minLines="4"
+				android:focusedByDefault="false"
+				app:MvxBind="Text TaskItem.Description"
+                app:layout_constraintHeight_min="150dp"
+                app:layout_constraintRight_toLeftOf="@+id/space_9"
+                app:layout_constraintLeft_toRightOf="@+id/space_1"
+                app:layout_constraintTop_toBottomOf="@id/lblDescription" />
+            
+			<View
+                android:id="@+id/space_11"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/txtDescription"
+                app:layout_constraintWidth_percent="0.08"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintDimensionRatio="1:0.5" />
+
+            <TextView
+                android:id="@+id/lblEstimate"
+                android:text="Estimate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toLeftOf="@+id/space_9"
+                app:layout_constraintLeft_toRightOf="@+id/space_11"
+                app:layout_constraintTop_toBottomOf="@id/space_11"/>
+            
+            <EditText
+                android:id="@+id/txtEstimate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textColor="#191919"
+                android:textAlignment="textStart"
+                android:maxLines="1"
+				android:maxLength="5"
+				android:imeOptions="actionDone"
+				android:inputType="numberDecimal"
+				android:focusedByDefault="false"
+				app:MvxBind="Text TaskItem.Estimate, Converter=StringToDouble, Mode=TwoWay"
+                app:layout_constraintRight_toLeftOf="@+id/space_9"
+                app:layout_constraintLeft_toRightOf="@+id/space_1"
+                app:layout_constraintTop_toBottomOf="@+id/lblEstimate" />
+			
+            <View
+                android:id="@+id/space_14"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/txtEstimate"
+                app:layout_constraintWidth_percent="0.08"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintDimensionRatio="1:0.5" />
+
+            <TextView
+                android:id="@+id/lblAssignedUser"
+                android:text="Assigned to"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toLeftOf="@+id/space_9"
+                app:layout_constraintLeft_toRightOf="@+id/space_10"
+                app:layout_constraintTop_toBottomOf="@id/space_14"/>
+
+            <View
+                android:id="@+id/space_16"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/lblAssignedUser"
+                app:layout_constraintWidth_percent="0.08"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintDimensionRatio="1:0.5" />
+
+            <Mvx.MvxSpinner
+                android:id="@+id/assignedUserList"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                style="@style/spinner_style"
+                android:popupBackground="@drawable/spinner_assigned_user_popup_border"
+                app:MvxBind="ItemsSource AssignedUserList; SelectedItem AssignedUser"
+                app:MvxItemTemplate="@layout/assigned_item_spinner_cell"
+                app:MvxDropDownItemTemplate="@layout/assigned_item_spinnerdropdown_cell"
+                app:layout_constraintTop_toBottomOf="@+id/space_16"
+                app:layout_constraintRight_toLeftOf="@+id/space_9"
+                app:layout_constraintLeft_toRightOf="@+id/space_1"/>
+
+			<View
+                android:id="@+id/space_12"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/assignedUserList"
+                app:layout_constraintWidth_percent="0.08"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintDimensionRatio="1:0.5" />
+            
+			<MvxListView
+                android:id="@+id/attouchImages"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:dividerHeight="1dp"
+                android:scrollbars="none"
+				app:MvxItemTemplate="@layout/attached_file_cell"
+				app:MvxBind="ItemsSource AttachedFiles"
+                app:layout_constraintTop_toBottomOf="@+id/space_12"
+                app:layout_constraintRight_toLeftOf="@+id/space_9"
+                app:layout_constraintLeft_toRightOf="@+id/space_1" />
+            
+			<View
+                android:id="@+id/space_13"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/attouchImages"
+                app:layout_constraintWidth_percent="0.08"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintDimensionRatio="1:0.5" />
+            
+            <Button
+                android:id="@+id/btnAddImage"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+				android:text="Attach image"
+				android:textColor="@android:color/white"
+				android:background="@drawable/btn_add_image_corner_radius"
+                app:MvxBind="Click AttachImageCommand"
+				app:layout_constraintHeight_max="60dp"
+				app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/space_13"
+                app:layout_constraintRight_toLeftOf="@+id/space_9"
+                app:layout_constraintLeft_toRightOf="@+id/space_1"
+                app:layout_constraintWidth_percent="0.8"
+                app:layout_constraintDimensionRatio="1:0.15"/>
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/btnsContainer"
+        android:background="@android:color/white"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+		app:layout_constraintHeight_max="80dp"
+        app:layout_constraintDimensionRatio="1080:180"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:text="Save"
+            android:textColor="@android:color/white"
+            android:background="@drawable/btn_save_or_create_task_corner_radius"
+			app:MvxBind="Click SaveTaskCommand"
+			app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/btnDelete"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <Button
+            android:id="@+id/btnDelete"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="10dp"
+            android:text="Delete"
+            android:textColor="@android:color/white"
+            android:background="@drawable/btn_delete_task_corner_radius"			
+            app:MvxBind="Click DeleteTaskCommand"
+			app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/btnSave"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </android.support.constraint.ConstraintLayout>
+</android.support.constraint.ConstraintLayout>
