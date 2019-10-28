@@ -1,5 +1,6 @@
 ﻿using Android.Content;
 using Android.Graphics;
+using Android.OS;
 using Android.Support.V4.Content;
 using Android.Views;
 using Android.Widget;
@@ -249,7 +250,13 @@ namespace KanbanList.Droid.Layouts
 
             var my_shadown_screen = new Helpers.DragShadowBuilder(view, Context);
 
-            view.StartDragAndDrop(data, my_shadown_screen, null, 0);
+            if (Build.VERSION.SdkInt > Android.OS.BuildVersionCodes.N)
+            {
+                view.StartDragAndDrop(data, my_shadown_screen, null, 0);
+                return false;
+            }
+
+            view.StartDrag(data, my_shadown_screen, null, 0);
 
             return false;
         }
